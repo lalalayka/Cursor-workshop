@@ -1,34 +1,75 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Box from '@mui/joy/Box'
+import Button from '@mui/joy/Button'
+import Card from '@mui/joy/Card'
+import CardContent from '@mui/joy/CardContent'
+import Typography from '@mui/joy/Typography'
+import Stack from '@mui/joy/Stack'
+import { IconBrandReact, IconBrandVite, IconPlus, IconMinus } from '@tabler/icons-react'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        gap: 3,
+        p: 2,
+      }}
+    >
+      <Stack direction="row" spacing={2}>
+        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
+          <IconBrandVite size={48} stroke={1.5} />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+          <IconBrandReact size={48} stroke={1.5} />
         </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </Stack>
+
+      <Typography level="h1">Vite + React + Joy UI</Typography>
+
+      <Card variant="outlined" sx={{ minWidth: 300 }}>
+        <CardContent>
+          <Stack spacing={2} alignItems="center">
+            <Typography level="title-lg">Counter Demo</Typography>
+            <Typography level="h2">{count}</Typography>
+            <Stack direction="row" spacing={1}>
+              <Button
+                startDecorator={<IconMinus />}
+                onClick={() => setCount((count) => count - 1)}
+                color="danger"
+                variant="soft"
+                size="lg"
+              >
+                Decrease
+              </Button>
+              <Button
+                startDecorator={<IconPlus />}
+                onClick={() => setCount((count) => count + 1)}
+                color="success"
+                variant="soft"
+                size="sm"
+              >
+                Increase
+              </Button>
+            </Stack>
+            <Typography level="body-sm" sx={{ mt: 2 }}>
+              Edit <code>src/App.tsx</code> and save to test HMR
+            </Typography>
+          </Stack>
+        </CardContent>
+      </Card>
+
+      <Typography level="body-sm" textColor="text.secondary">
+        Built with Joy UI and Tabler Icons
+      </Typography>
+    </Box>
   )
 }
 
