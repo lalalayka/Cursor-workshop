@@ -2,6 +2,38 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Netlify Deployment
+
+This project is configured for deployment on Netlify. The following files have been set up:
+- `netlify.toml` - Build and deploy configuration
+- `public/_redirects` - SPA routing configuration
+
+### Deploy to Netlify
+
+#### Option 1: Deploy via Git (Recommended)
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Log in to [Netlify](https://app.netlify.com/)
+3. Click "Add new site" → "Import an existing project"
+4. Connect your repository
+5. Netlify will auto-detect the settings from `netlify.toml`
+6. Click "Deploy site"
+
+#### Option 2: Deploy via Netlify CLI
+```bash
+# Login to Netlify
+npx netlify login
+
+# Deploy to a draft URL for testing
+npx netlify deploy
+
+# Deploy to production
+npx netlify deploy --prod
+```
+
+#### Option 3: Manual Deploy
+1. Build the project: `npm run build`
+2. Drag and drop the `dist` folder to [Netlify Drop](https://app.netlify.com/drop)
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
