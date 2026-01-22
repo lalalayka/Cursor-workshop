@@ -6,7 +6,6 @@ import CardContent from '@mui/joy/CardContent'
 import Typography from '@mui/joy/Typography'
 import Stack from '@mui/joy/Stack'
 import { IconBrandReact, IconBrandVite, IconPlus, IconMinus } from '@tabler/icons-react'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -43,9 +42,9 @@ function App() {
               <Button
                 startDecorator={<IconMinus />}
                 onClick={() => setCount((count) => count - 1)}
-                color="danger"
+                color="primary"
                 variant="soft"
-                size="lg"
+                size="md"
               >
                 Decrease
               </Button>
@@ -54,7 +53,7 @@ function App() {
                 onClick={() => setCount((count) => count + 1)}
                 color="success"
                 variant="soft"
-                size="sm"
+                size="md"
               >
                 Increase
               </Button>
