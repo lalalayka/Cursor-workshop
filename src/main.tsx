@@ -6,8 +6,15 @@ import App from './App.tsx'
 
 const theme = extendTheme({
   fontFamily: {
-    body: '"Space Grotesk", var(--joy-fontFamily-fallback)',
-    display: '"Space Grotesk", var(--joy-fontFamily-fallback)',
+    body: '"Inter", var(--joy-fontFamily-fallback)',
+    display: '"Poppins", var(--joy-fontFamily-fallback)',
+  },
+  fontWeight: {
+    xl: 500,
+    lg: 500,
+    md: 500,
+    sm: 500,
+    xs: 500,
   },
   colorSchemes: {
     light: {
